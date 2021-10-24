@@ -5,7 +5,10 @@ from oauthlib.common import Request
 from etsy_py.api import EtsyAPI
 
 
-class Api:
+from .inventory import Inventory
+
+
+class Api(Inventory):
     api = None
     shop = None
 

@@ -1,6 +1,7 @@
 from abc import abstractmethod
 from re import sub, match
 
+
 class Entity:
     def __init__(self, entity):
         self.entity = entity
@@ -28,8 +29,6 @@ class Etsy(Entity):
                 'sku': item['sku'],
                 'quantity': float(item['quantity']),
             })
-
-
 
 
 class RainPos(Entity):

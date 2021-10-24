@@ -1,6 +1,7 @@
-from etsy import EtsyReader
-from rainpos import RainPosReader
+from inventories import InventoryCsvCreator, InventoryApiCreator
 from InventoryCompare import CompareStock
+
+"""
 
 STORE_NAME = "SarahMaeFabrics"
 
@@ -18,14 +19,18 @@ def set_rain():
     rain = RainPosReader('data/9330-edit-inventory(1).csv')
     rain.set_data()
     return rain
+"""
+
+
+def create_csv_test(creator):
+    return creator.create_inventory(filename='data/rainpos_inventory.csv')
 
 
 def main():
-    etsy = set_etsy()
-    rain = set_rain()
+    csv_test = create_csv_test(InventoryCsvCreator())
 
-    cs = CompareStock(etsy, rain)
-    cs.compare_stock()
+    print(csv_test.get_config('directory'))
+
 
 
 
