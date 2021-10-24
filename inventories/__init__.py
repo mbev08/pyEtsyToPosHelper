@@ -1,2 +1,3 @@
-from .creators import InventoryCsvCreator, InventoryApiCreator
+from .creators import InventoryCsvCreator, InventoryEtsyApiCreator
+
 

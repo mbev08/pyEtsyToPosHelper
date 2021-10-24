@@ -1,0 +1,39 @@
+Keys:
+  title: title
+  id: sku
+  qty: quantity
+
+VariablesMapping:
+  <SHOP_NAME>: shop_name
+  <SHOP_ID>: shop_id
+  <RESULTS_LIMIT>: results_limit
+  <PAGE_INDEX>: page_index
+
+
+CreateRequestToken:
+  URI: /oauth/request_token?scope=listings_w
+  Properties:
+    API_KEY: oauth_consumer_key
+    API_SECRET: oauth_consumer_secret
+
+GetShopId:
+  URI: /shops/<SHOP_NAME>
+  Variables:
+    - <SHOP_NAME>
+  Returns: shop_id
+
+GetActiveListings:
+  URI: /shops/<SHOP_ID>/listings/active?limit=<RESULTS_LIMIT>&page=<PAGE_INDEX>
+  Variables:
+    - <SHOP_ID>
+    - <RESULTS_LIMIT>
+    - <PAGE_INDEX>
+
+GetExpiredListings:
+    URI: /shops/<SHOP_ID>/listings/expired?limit=<RESULTS_LIMIT>&page=<PAGE_INDEX>
+    Variables:
+      - <SHOP_ID>
+      - <RESULTS_LIMIT>
+      - <PAGE_INDEX>
+
+

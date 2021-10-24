@@ -1,7 +1,7 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
 
-from ._api import Api
+from ._api_etsy import ApiEtsy
 from ._csv import Csv
 
 
@@ -18,10 +18,10 @@ class InventoryCsvCreator(InventoryCreator):
         return Csv(**kwargs)
 
 
-class InventoryApiCreator(InventoryCreator):
+class InventoryEtsyApiCreator(InventoryCreator):
 
     def create_inventory(self, **kwargs) -> object:
-        pass
+        return ApiEtsy(**kwargs)
 
 
 
