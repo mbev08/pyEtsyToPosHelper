@@ -9,7 +9,9 @@ ___
 ## Todo List
 1. Aggregate 'etsy' and 'rainpos' modules into a single module.
    1. Redesign module so it is more akin to Builder/Factory design patterns
+      1. Done: Csv <set/get/validate> config, 
    2. Create default 'etsy' config
+   3. 
 2. Create a Config file so end-user can edit Etsy API if needed.
    1. YAML probably...
 3. Refactor 'InventoryCompare', as it probably needs it.. can't remember.

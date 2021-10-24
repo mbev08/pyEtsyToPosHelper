@@ -23,15 +23,20 @@ def set_rain():
 
 
 def create_csv_test(creator):
-    return creator.create_inventory(filename='data/rainpos_inventory.csv')
+    return creator.create_inventory(
+        directory='data',
+        productID='Manufacturer Product Id,sku',
+        productTitle='Product Title',
+        productQuantity='Edit Inventory'
+    )
 
 
 def main():
     csv_test = create_csv_test(InventoryCsvCreator())
 
-    print(csv_test.get_config('directory'))
-
-
+    print(csv_test.get_config('productTitle'))
+    csv_test.set_inventory()
+    print(csv_test.get_inventory())
 
 
 if __name__ == "__main__":
